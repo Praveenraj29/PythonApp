@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy import StaticPool, create_engine
 from app.core.config import settings
-from app.main import app
+from app.main import app as fastapi_app
 from app.tests.utils.user import authentication_token_from_email
 from app.tests.utils.utils import get_superuser_token_headers
 
@@ -27,7 +27,7 @@ def db() -> Generator:
 
 @pytest.fixture(scope="module")
 def client() -> Generator:
-    with TestClient(app) as c:
+    with TestClient(fastapi_app) as c:
         yield c
 
 
