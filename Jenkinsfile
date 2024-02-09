@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'cd docker build -t authapp:${BUILD_Number} .'
+                sh 'docker build -t authapp:${BUILD_Number} .'
             }
         }
         stage('Docker Run') {
