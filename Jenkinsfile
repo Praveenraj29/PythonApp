@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Docker Run') {
             steps {
-                sh 'docker run -p 8000:8000 authapp'
+                sh 'docker run -d -p 8000:8000 authapp'
             }
         }
     }
