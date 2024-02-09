@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stage('BUILD NUM')
     {
         echo '${BUILD_NUMBER}'
