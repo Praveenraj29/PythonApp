@@ -1,15 +1,19 @@
 pipeline {
-	agent none
+    agent none
     stage('BUILD NUM')
     {
         echo '${BUILD_NUMBER}'
     }
-    stage('Docker Build') {
+    stage('Docker Build') 
+    {
       steps {
-      	sh 'docker build -t authapp:${BUILD_Number} .'
+          sh 'docker build -t authapp:${BUILD_Number} .'
       }
-    stage('Docker Run'){
+    stage('Docker Run')
+    {
       steps{
         sh 'docker run -p 8000:8000 authapp:latest'
     }
+    }
   }
+}
