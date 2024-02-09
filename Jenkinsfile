@@ -6,9 +6,14 @@ pipeline {
                 echo '${BUILD_NUMBER}'
             }
         }
+        stage('Dir') {
+          steps {
+            sh 'ls -a'
+          }
+        }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t authapp:${BUILD_Number} .'
+                sh 'cd docker build -t authapp:${BUILD_Number} .'
             }
         }
         stage('Docker Run') {
