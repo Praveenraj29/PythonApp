@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stage('BUILD NUM')
+    stage('Env Var')
     {
         echo '${BUILD_NUMBER}'
     }
